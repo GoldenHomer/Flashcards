@@ -15,7 +15,7 @@ class DecksController < ApplicationController
 	# end
 
 	def show
-		@deck = Deck.find(params[:id])
+		@deck = Deck.find(params[:id ])
 	end
 
 	def new
@@ -27,4 +27,19 @@ class DecksController < ApplicationController
 		@deck.save
 		redirect_to "/decks"
 	end
+
+	def edit
+		@deck = Deck.find(params[:id])
+	end
+
+	def update
+		@deck = Deck.find(params[:id])
+		@deck.update_attributes(params[:deck])
+		redirect_to "/decks/#{deck.id}"
+	end
+
+	def destroy
+		@deck = Deck.find(params[:id])
+		@deck.destroy
+		redirect_to "/decks"
 end
