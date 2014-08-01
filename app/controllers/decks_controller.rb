@@ -15,7 +15,7 @@ class DecksController < ApplicationController
 	# end
 
 	def show
-		@deck = Deck.find(params["id"])
+		@deck = Deck.find(params[:id])
 	end
 
 	def new
@@ -23,7 +23,7 @@ class DecksController < ApplicationController
 	end
 
 	def create
-		@deck = Deck.new(params["deck"])
+		@deck = Deck.new(params[:deck])
 		@deck.save
 		redirect_to "/decks"
 	end
