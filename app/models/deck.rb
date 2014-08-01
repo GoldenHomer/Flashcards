@@ -1,0 +1,1 @@
+class Deck < ActiveRecord::Base
